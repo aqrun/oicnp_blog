@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .wrapper{
     background:white;
     box-shadow: 0 2px 10px 0px rgba(0,0,0,0.5);
@@ -19,7 +20,21 @@
 .wrapper .mat-form-field-flex{
     width:100%;
 }
+h2{
+    text-align: center;
+    margin:15px 0 20px 0;
+    color:#333;
+}
 .btnw{
     display: flex;
     justify-content: flex-end;
+}
+
+
+.login-form-forgot {
+    float: right;
+}
+
+.login-form-button {
+    width: 100%;
 }

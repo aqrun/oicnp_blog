@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms'
+
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import { MatInputModule } from '@angular/material/input'; 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthGuard } from './auth-guard.service'
+import { AuthService } from './auth.service'
 
 const mat_modules = [
-    MatButtonModule, MatCheckboxModule, MatInputModule,BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgZorroAntdModule,
 ]
 
 @NgModule({
@@ -24,7 +28,12 @@ const mat_modules = [
     exports:[
         HeaderComponent,
         FooterComponent,
+        CommonModule,
         ...mat_modules,
+    ],
+    providers: [
+        AuthGuard,
+        AuthService,
     ]
 })
 export class CoreModule {
